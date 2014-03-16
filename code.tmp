@@ -1,0 +1,6 @@
+class_temp:"public class $TABLENAME {\n $DECLARE $GETSETFUN \n}"
+import_temp:"import $IMPORTNAME ;\n"
+code_temp:"$SUGAR private $TYPE $NAME ;\n"
+get_temp:"public $TYPE get$NAME \b(){\n\treturn this.$NAME \b;\n}\n"
+set_temp:"public void set$NAME \b($TYPE $NAME){\n\tthis.$NAME = $NAME;\n}\n"
+
