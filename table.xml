@@ -1,7 +1,7 @@
 <table name="Image">
     <import>
-        <item>org.java.XXXX;</item>
-        <item>org.javax.XXX;</item>
+        <item>org.java.XXXX</item>
+        <item>org.javax.XXX</item>
     </import>
   <column>
 	<sugar>
