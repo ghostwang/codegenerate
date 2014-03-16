@@ -1,0 +1,25 @@
+<table name="Image">
+    <import>
+        <item>org.java.XXXX;</item>
+        <item>org.javax.XXX;</item>
+    </import>
+  <column>
+	<sugar>
+	    <item>@Column</item>
+        <item>@ID</item>
+	</sugar>
+    <field>
+        <type>String</type>
+        <name>ID</name>
+    </field>
+</column>
+<column>
+    <sugar>
+        <item>@Column</item>
+    </sugar>
+    <field>
+        <type>int</type>
+        <name>test</name>
+    </field>
+  </column>
+</table>
