@@ -4,12 +4,12 @@ import xml.etree.ElementTree as ET
 
 def init():
     text = open("./code.tpl","r").read()
-    pattern = re.compile(u"<code>([\s\S]*?)</code>")
+    pattern = re.compile("<code>([\s\S]*?)</code>")
     match = pattern.findall(text)
     dic = {}
     # "String"->"@column @id private String $NAME; \n public String get$NAME { return this.$NAME;}\public void set$NAME (String $NAME) {this.$NAME = $NAME;}"
     for mat in match:
-        pattern = re.compile(r"private[\s]+(\w+)")
+        pattern = re.compile("private[\s]+(\w+)")
         tpl_type = pattern.findall(mat)[0]
         dic[tpl_type]=mat
 
@@ -26,11 +26,12 @@ def init():
         elem_type = elem.find("field/type").text
         elem_name = elem.find("field/name").text
         code_temp += dic[elem_type]
-        elem_code += code_temp.replace(r'$NAME',elem_name)
+        elem_code += code_temp.replace('$NAME',elem_name)
 
-    final_code= re.compile(u'<code>[\s\S]*<\/code>').sub(elem_code,text)
-    final_code = final_code.replace(r'$TABLENAME',table_name)
+    final_code= re.compile('<code>[\s\S]*<\/code>').sub(elem_code,text)
+    final_code = final_code.replace('$TABLENAME',table_name)
     print final_code
+    text.close()
 
 if __name__ == "__main__":
     init()
